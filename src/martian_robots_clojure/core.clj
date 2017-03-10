@@ -8,7 +8,6 @@
     (= (:orientation robot) :E) (update robot :x inc)
     (= (:orientation robot) :W) (update robot :x dec)))
 
-
 (defn rotate-right
   [robot]
   (cond
@@ -16,7 +15,6 @@
     (= (:orientation robot) :E) (assoc robot :orientation :S)
     (= (:orientation robot) :S) (assoc robot :orientation :W)
     (= (:orientation robot) :W) (assoc robot :orientation :N)))
-
 
 (defn rotate-left
   [robot]
@@ -36,7 +34,6 @@
 (defn go
   [robot instructions]
   (reduce (fn [robot instruction] (move robot instruction)) robot instructions))
-
 
 (defn -main
   []
